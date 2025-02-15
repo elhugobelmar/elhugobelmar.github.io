@@ -75,7 +75,7 @@ body {
   font-size: 15px;
   text-align: center;
   line-height: 25px;
-  top: 128px;
+  top: 126px;
   left: 95px;
   color: #003049;
 }
@@ -140,8 +140,8 @@ body {
   height: 25px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
-  bottom: 250px;
-  left: 650px;
+  bottom: 150px;
+  left: 490px;
   animation: scale 3s linear infinite;
   z-index: -1;
 }
