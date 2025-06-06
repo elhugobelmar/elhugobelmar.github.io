@@ -1,19 +1,5 @@
-$(document).ready(function () {
-  $(".container")
-    .mouseenter(function () {
-      $(".card").stop().animate(
-        {
-          top: "-90px",
-        },
-        "slow"
-      );
-    })
-    .mouseleave(function () {
-      $(".card").stop().animate(
-        {
-          top: 0,
-        },
-        "slow"
-      );
+document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("click", () => {
+        alert("¡Gracias por interesarte en la adopción!");
     });
 });
