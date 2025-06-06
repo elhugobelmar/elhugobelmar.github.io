@@ -17,17 +17,34 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
     margin-top: 20px;
 }
 
-img {
-    width: 250px;
+.imagen-con-texto {
+    display: inline-block; /* Hace que el contenedor se ajuste al contenido */
+    border: 2px solid #ff8c42; /* Color del borde */
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
     border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
+    transition: border-color 0.3s, transform 0.2s;
 }
 
-img:hover {
+.imagen-con-texto:hover {
+    border-color: #ff5722; /* Cambia el color del borde al pasar el mouse */
     transform: scale(1.05);
+}
+
+.imagen-con-texto img {
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.imagen-con-texto h6 {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #333;
 }
