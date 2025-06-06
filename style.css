@@ -16,35 +16,53 @@ h1 {
 .galeria {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Alineado a la izquierda en móviles */
     gap: 15px;
     margin-top: 20px;
+    padding-left: 20px; /* Ajusta el margen izquierdo */
+}
+
+/* Centrar en computadoras */
+@media (min-width: 768px) {
+    .galeria {
+        align-items: center; /* En pantallas más grandes, la galería se centra */
+        padding-left: 0;
+    }
+}
+
+.imagen-link {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: inherit;
 }
 
 .imagen-con-texto {
-    display: inline-block; /* Hace que el contenedor se ajuste al contenido */
-    border: 2px solid #ff8c42; /* Color del borde */
+    display: flex; /* Activa el modelo flexible para manejar la alineación */
+    align-items: center; /* Asegura que la imagen y el texto estén alineados */
+    border: 2px solid #ff8c42;
     padding: 10px;
     margin: 10px;
-    text-align: center;
     border-radius: 10px;
+    width: 320px; /* Ajusta el ancho del contenedor */
+    text-align: left;
     transition: border-color 0.3s, transform 0.2s;
 }
 
 .imagen-con-texto:hover {
-    border-color: #ff5722; /* Cambia el color del borde al pasar el mouse */
+    border-color: #ff5722; /* Cambia el borde al pasar el mouse */
     transform: scale(1.05);
 }
 
 .imagen-con-texto img {
-    width: 250px;
-    display: block;
-    margin: 0 auto;
+    width: 50%; /* La imagen ocupará el 50% del ancho del contenedor */
+    max-width: 200px; /* Tamaño máximo para evitar que se agrande demasiado */
+    height: auto; /* Mantiene la proporción correcta */
     border-radius: 10px;
+    margin-right: 10px;
 }
 
+
 .imagen-con-texto h6 {
-    margin-top: 8px;
     font-size: 16px;
     color: #333;
+    text-align: left; /* Asegura que el texto dentro del contenedor también esté alineado */
 }
