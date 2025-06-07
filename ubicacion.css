@@ -32,28 +32,66 @@ button:hover {
     background-color: #e64a19;
 }
 
-.mapa-container, .qr-container {
-    max-height: 0; /* Inicialmente oculta */
+.mapa-container {
+    max-height: 0; /* Oculto por defecto */
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
     width: 100%;
     text-align: center;
-    height: auto; /* Mantiene la proporción original */
+    padding: 0; /* Evita espacios vacíos antes de desplegar */
+}
+
+.mapa-container img {
+    width: 90%; /* Reduce un poco el ancho en móviles */
+    max-width: 400px; /* Ajuste para pantallas más pequeñas */
+    height: auto;
     border-radius: 10px;
-    object-fit: cover; /* Ajusta la imagen para que llene el espacio */
     display: block;
     margin: auto;
 }
 
-
-
-
-.qr-container img {
-    width: 200px;
-    margin-top: 10px;
+/* Cuando se despliega */
+.mapa-container.active {
+    max-height: 100vh; /* Ajusta la altura para pantallas pequeñas */
+    padding: 15px; /* Se expande suavemente */
 }
 
-/* Cuando está visible */
-.mapa-container.active, .qr-container.active {
-    max-height: 400px; /* Ajusta según el tamaño de la imagen */
+/* Ajustes específicos para móviles */
+@media (max-width: 600px) {
+    .mapa-container img {
+        width: 80%; /* Imagen más compacta en móviles */
+        max-width: 350px;
+    }
+}
+.qr-container {
+    max-height: 0; /* Oculto por defecto */
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    width: 100%;
+    text-align: center;
+    padding: 0;
+}
+
+/* Ajuste para imágenes dentro del contenedor */
+.qr-container img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+/* Cuando el contenedor se despliega */
+.qr-container.active {
+    max-height: 100vh; /* Expande la altura */
+    padding: 15px; /* Se despliega suavemente */
+}
+
+/* Ajustes para móviles */
+@media (max-width: 600px) {
+    .qr-container img {
+        width: 80%;
+        max-width: 350px;
+    }
 }
