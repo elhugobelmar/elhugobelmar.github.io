@@ -33,28 +33,41 @@ button:hover {
 }
 
 .mapa-container {
-    max-height: 0; /* Oculto por defecto */
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
-    width: 100%;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    width: 100%; /* Se asegura de que no sobrepase el ancho */
     text-align: center;
-    padding: 0; /* Evita espacios vacíos antes de desplegar */
+    padding: 0;
+    opacity: 0;
+    display: flex;
+    justify-content: center; /* Centra la imagen dentro del contenedor */
 }
 
 .mapa-container img {
-    width: 90%; /* Reduce un poco el ancho en móviles */
-    max-width: 400px; /* Ajuste para pantallas más pequeñas */
+    width: 90%; /* Reduce un poco el ancho para evitar desbordamiento */
+    max-width: 400px; /* Límite en pantallas grandes */
     height: auto;
     border-radius: 10px;
     display: block;
     margin: auto;
 }
 
-/* Cuando se despliega */
+/* Cuando el mapa se despliega */
 .mapa-container.active {
-    max-height: 100vh; /* Ajusta la altura para pantallas pequeñas */
-    padding: 15px; /* Se expande suavemente */
+    max-height: 500px; /* Ajusta según el contenido */
+    opacity: 1;
+    padding: 15px;
 }
+
+/* **Corrección para móviles** */
+@media (max-width: 600px) {
+    .mapa-container img {
+        width: 80%;
+        max-width: 350px;
+    }
+}
+
 
 /* Ajustes específicos para móviles */
 @media (max-width: 600px) {
@@ -66,27 +79,44 @@ button:hover {
 .qr-container {
     max-height: 0; /* Oculto por defecto */
     overflow: hidden;
-    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out;
     width: 100%;
     text-align: center;
     padding: 0;
+    opacity: 0;
 }
 
-/* Ajuste para imágenes dentro del contenedor */
+.qr-container.active {
+    max-height: 100vh; /* Expande el contenedor */
+    padding: 15px;
+    opacity: 1; /* Hace que aparezca suavemente */
+}
+
+/* Ajuste para imágenes */
 .qr-container img {
-    width: 90%;
-    max-width: 400px;
+    width: 60%; /* Reduce el tamaño en pantallas grandes */
+    max-width: 200px; /* Establece un límite máximo */
     height: auto;
     border-radius: 10px;
     display: block;
     margin: auto;
 }
 
-/* Cuando el contenedor se despliega */
-.qr-container.active {
-    max-height: 100vh; /* Expande la altura */
-    padding: 15px; /* Se despliega suavemente */
+/* Ajuste adicional solo para PC */
+@media (min-width: 1024px) {
+    .qr-container img {
+        width: 40%; /* Reduce aún más en pantallas grandes */
+        max-width: 150px;
+    }
 }
+
+
+/* Centrar el contenido dentro del desplegable */
+.qr-container p {
+    text-align: center;
+    margin-top: 10px;
+}
+
 
 /* Ajustes para móviles */
 @media (max-width: 600px) {

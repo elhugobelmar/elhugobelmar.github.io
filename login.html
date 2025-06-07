@@ -31,13 +31,32 @@
 <script>
     function toggleMapa() {
         var mapa = document.getElementById("mapa");
+        if (mapa.classList.contains("active")) {
+            mapa.style.maxHeight = "0";
+            mapa.style.opacity = "0";
+        } else {
+            mapa.style.maxHeight = "500px"; /* Ajusta según tamaño */
+            mapa.style.opacity = "1";
+        }
         mapa.classList.toggle("active");
     }
 
+
+
+
     function toggleQR() {
         var qr = document.getElementById("qr-container");
+        if (qr.classList.contains("active")) {
+            qr.style.maxHeight = "0";
+            qr.style.opacity = "0";
+        } else {
+            qr.style.maxHeight = "100vh";
+            qr.style.opacity = "1";
+        }
         qr.classList.toggle("active");
     }
+
+
 </script>
 
 </body>
