@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fef6e4;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    background-color: #ff8c42;
+    padding: 15px;
+}
+
+h1 {
+    color: white;
+    font-size: 24px;
+}
+
+button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+.mapa-container, .qr-container {
+    display: none; /* Ocultar por defecto */
+    opacity: 0; /* Inicia invisible */
+    transform: scaleY(0); /* Comienza comprimido */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #fff;
+    border: 2px solid #ff8c42;
+    border-radius: 10px;
+}
+
+.qr-container img {
+    width: 200px;
+    margin-top: 10px;
+}
+
+/* Cuando está visible */
+.mapa-container.active, .qr-container.active {
+    display: block;
+    opacity: 1;
+    transform: scaleY(1); /* Se expande suavemente */
+}
