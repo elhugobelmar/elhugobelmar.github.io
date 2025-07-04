@@ -6,13 +6,14 @@ body {
     padding: 0;
 }
 
-/* === Contenedor general de la estructura === */
+/* === Contenedor general === */
 .contenedor {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
-/* === Barra lateral desplegable === */
+/* === Barra lateral === */
 .sidebar {
     width: 200px;
     background-color: #ff8c42;
@@ -29,17 +30,18 @@ body {
     background-color: #ff5722;
     color: white;
     border: none;
-    padding: 8px;
-    cursor: pointer;
-    font-size: 18px;
+    padding: 10px;
+    font-size: 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    cursor: pointer;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .sidebar ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar li {
@@ -51,6 +53,8 @@ body {
     text-decoration: none;
     font-weight: bold;
     display: block;
+    font-size: 16px;
+    padding: 5px 0;
 }
 
 .sidebar.contraido a {
@@ -61,15 +65,14 @@ body {
 .contenido {
     flex: 1;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.08);
     margin: 20px;
-    width: 100%;
-    max-width: 1000px;
+    max-width: calc(100% - 220px);
 }
 
-/* === Títulos centrados y estilizados === */
+/* === Títulos y textos === */
 header h1,
 .contenido h2,
 .volver {
@@ -79,7 +82,6 @@ header h1,
     margin-top: 20px;
 }
 
-/* === Texto de párrafos justificados === */
 .contenido p {
     text-align: justify;
     color: #4e4e4e;
@@ -88,7 +90,7 @@ header h1,
     margin-bottom: 20px;
 }
 
-/* === Galería de imágenes estilizada === */
+/* === Galería de imágenes === */
 .imagenes {
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +112,7 @@ header h1,
     box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* === Botón de volver estilizado === */
+/* === Botón de volver === */
 .volver {
     display: inline-block;
     margin-top: 30px;
@@ -127,34 +129,58 @@ header h1,
     background-color: #ff7c56;
 }
 
-/* === Responsive para móviles === */
-@media (max-width: 768px) {
+/* === Versión responsive móvil === */
+@media screen and (max-width: 768px) {
     .contenedor {
         flex-direction: column;
     }
 
     .sidebar {
         width: 100%;
-        display: flex;
-        justify-content: space-around;
         padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .sidebar.contraido {
         width: 100%;
     }
 
+    .sidebar ul {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .sidebar li {
+        margin: 0;
+    }
+
     .sidebar a {
-        display: inline-block;
         font-size: 14px;
+        padding: 5px 10px;
+        background-color: rgba(255,255,255,0.15);
+        border-radius: 5px;
     }
 
     .sidebar.contraido a {
         display: inline-block;
     }
 
+    .contenido {
+        max-width: 100%;
+        margin: 10px;
+        padding: 15px;
+    }
+
     .imagenes img {
-        width: 85%;
+        width: 100%;
         max-width: 300px;
+    }
+
+    .volver {
+        font-size: 14px;
+        padding: 8px 15px;
     }
 }
