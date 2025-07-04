@@ -1,30 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Presentación</title>
-    <link rel="stylesheet" href="presentacion.css">
+    <link rel="stylesheet" href="presentacion.css" />
 </head>
 <body>
-    <header>
-        <h1>🐾 Presentación de Huellitas Sin Hogar</h1>
-    </header>
+    <div class="contenedor">
+        <!-- Barra lateral -->
+        <nav class="sidebar contraido">
+    <button onclick="toggleSidebar()">☰</button>
+    <ul>
+        <li><a href="#problematica">Problemática</a></li>
+        <li><a href="#solucion">Solución</a></li>
+        <li><a href="#imagenes">Imágenes</a></li>
+    </ul>
+</nav>
 
-    <main>
-        <section class="contenido">
-            <p>
-                Esta página ha sido creada con el propósito de conectar mascotas sin hogar con personas que desean brindarles una segunda oportunidad.
-            </p>
-            <p>
-                Nuestro objetivo es facilitar la adopción responsable, concientizar sobre el abandono animal y ofrecer herramientas simples para publicar, registrar y localizar animales en situación de vulnerabilidad.
-            </p>
-            <p>
-                ¡Gracias por ser parte de este movimiento solidario! 🧡
-            </p>
-        </section>
+        <!-- Contenido principal -->
+        <main class="contenido">
+            <header>
+                <h1>🐾 Presentación de Huellitas Sin Hogar</h1>
+            </header>
 
-        <a href="https://elhugobelmar.github.io/index.html" class="volver">⬅ Volver a la página principal</a>
-    </main>
+            <section id="problematica">
+                <h2>💬 Problemática</h2>
+                <p>
+                    El abandono de los perros y los perros callejeros <br>
+                    El abandono de perros es un problema creciente en muchas ciudades. A diario, cientos de perros son dejados a su suerte en las calles, sin alimento, refugio ni atención médica. Esto genera consecuencias negativas tanto para los animales como para la comunidad: los perros sufren enfermedades, hambre y maltrato, y en algunos casos pueden representar un riesgo para la salud pública. 
+                    Las causas de este problema incluyen la falta de conciencia sobre la tenencia responsable, la reproducción no controlada de mascotas, la ausencia de leyes estrictas sobre el abandono animal y la escasez de recursos para albergues.
+                </p>
+                <div class="imagenes">
+                    <img src="imagenes/problema1.jpg" alt="Animal en calle" />
+                    <img src="imagenes/problema2.jpg" alt="Perro abandonado" />
+                </div>
+            </section>
+
+            <section id="solucion">
+                <h2>✅ Solución</h2>
+                <p>
+                    Sitio web de información y acción "Huellas de Patas Sin Hogar"
+
+Propuesta de solución digital a través de un sitio web que ofrece:<br>
+
+1. Información educativa: sobre tenencia responsable, esterilización, vacunación y las consecuencias del abandono.<br>
+2. Registro de Adopciones: Donde refugios y particulares pueden subir perfiles de perros disponibles para adopción.<br>
+3. Guía de Denuncias: con enlaces y contactos para que las autoridades locales denuncien casos de maltrato o abandono.<br>
+4. Blog y foros comunitarios: para compartir experiencias, consejos y concienciar.<br>
+5. Voluntariado y Donaciones: la posibilidad de apoyar a refugios colaboradores económicamente o con su tiempo.<br>
+
+En resumen, colegas, una plataforma como esta ayudaría a reducir el abandono mediante la educación, la acción comunitaria y las adopciones responsables. Unámonos por un mundo con más empatía por los animales, porque ellos también sienten.
+                </p>
+                <div class="imagenes">
+                    <img src="imagenes/solucion1.jpg" alt="Adoptante con mascota" />
+                    <img src="imagenes/solucion2.jpg" alt="Registro en plataforma" />
+                </div>
+            </section>
+
+            <section id="imagenes">
+                <h2>📸 Imágenes representativas</h2>
+                <p>
+                    Aquí encontrarás fotos que reflejan la misión y el impacto de este proyecto.
+                </p>
+                <div class="imagenes">
+                    <img src="imagenes/mision1.jpg" alt="Equipo trabajando" />
+                    <img src="imagenes/mision2.jpg" alt="Mascotas felices" />
+                </div>
+            </section>
+
+            <a href="index.html" class="volver">⬅ Volver a la página principal</a>
+        </main>
+    </div>
+
+    <script>
+        function toggleSidebar() {
+            document.querySelector(".sidebar").classList.toggle("contraido");
+        }
+    </script>
 </body>
 </html>
