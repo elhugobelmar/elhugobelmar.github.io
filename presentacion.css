@@ -1,29 +1,30 @@
-/* === Fuente y fondo general === */
+/* === ESTILO GENERAL === */
 body {
-    font-family: 'Segoe UI', 'Roboto', sans-serif;
-    background-color: #fffaf3;
     margin: 0;
     padding: 0;
+    background-color: #fffaf3;
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
 }
 
-/* === Contenedor general === */
+/* === CONTENEDOR GENERAL === */
 .contenedor {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
-/* === Barra lateral === */
+/* === BARRA LATERAL === */
 .sidebar {
-    width: 200px;
+    width: 20%;
+    min-width: 60px;
     background-color: #ff8c42;
-    padding: 20px;
+    padding: 2%;
     transition: width 0.3s ease-in-out;
     overflow: hidden;
 }
 
 .sidebar.contraido {
-    width: 60px;
+    width: 6%;
 }
 
 .sidebar button {
@@ -31,7 +32,7 @@ body {
     color: white;
     border: none;
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
@@ -45,7 +46,7 @@ body {
 }
 
 .sidebar li {
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 .sidebar a {
@@ -53,7 +54,7 @@ body {
     text-decoration: none;
     font-weight: bold;
     display: block;
-    font-size: 16px;
+    font-size: 1em;
     padding: 5px 0;
 }
 
@@ -61,18 +62,18 @@ body {
     display: none;
 }
 
-/* === Contenido principal === */
+/* === CONTENIDO PRINCIPAL === */
 .contenido {
     flex: 1;
     padding: 20px;
+    max-width: 78%;
     background-color: #fff;
     border-radius: 10px;
+    margin: 20px auto;
     box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.08);
-    margin: 20px;
-    max-width: calc(100% - 220px);
 }
 
-/* === Títulos y textos === */
+/* === TITULOS CENTRADOS === */
 header h1,
 .contenido h2,
 .volver {
@@ -82,6 +83,7 @@ header h1,
     margin-top: 20px;
 }
 
+/* === PÁRRAFOS JUSTIFICADOS === */
 .contenido p {
     text-align: justify;
     color: #4e4e4e;
@@ -90,7 +92,7 @@ header h1,
     margin-bottom: 20px;
 }
 
-/* === Galería de imágenes === */
+/* === GALERÍA DE IMÁGENES === */
 .imagenes {
     display: flex;
     flex-wrap: wrap;
@@ -100,8 +102,8 @@ header h1,
 }
 
 .imagenes img {
-    width: 90%;
-    max-width: 350px;
+    width: 100%;
+    max-width: 340px;
     border-radius: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
@@ -112,7 +114,7 @@ header h1,
     box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* === Botón de volver === */
+/* === BOTÓN DE VOLVER === */
 .volver {
     display: inline-block;
     margin-top: 30px;
@@ -129,7 +131,7 @@ header h1,
     background-color: #ff7c56;
 }
 
-/* === Versión responsive móvil === */
+/* === RESPONSIVE PARA TELÉFONOS === */
 @media screen and (max-width: 768px) {
     .contenedor {
         flex-direction: column;
@@ -137,10 +139,10 @@ header h1,
 
     .sidebar {
         width: 100%;
-        padding: 10px;
+        padding: 10px 2%;
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .sidebar.contraido {
@@ -151,13 +153,11 @@ header h1,
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
-    }
-
-    .sidebar li {
-        margin: 0;
+        justify-content: center;
     }
 
     .sidebar a {
+        display: inline-block;
         font-size: 14px;
         padding: 5px 10px;
         background-color: rgba(255,255,255,0.15);
@@ -169,14 +169,13 @@ header h1,
     }
 
     .contenido {
-        max-width: 100%;
-        margin: 10px;
+        max-width: 95%;
+        margin: 10px auto;
         padding: 15px;
     }
 
     .imagenes img {
-        width: 100%;
-        max-width: 300px;
+        max-width: 280px;
     }
 
     .volver {
